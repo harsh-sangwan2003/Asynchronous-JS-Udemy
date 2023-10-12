@@ -11,3 +11,23 @@ function calculateSquare(number) {
         }, 1000);
     })
 }
+
+const pr = calculateSquare(1);
+pr.then(val => {
+
+    console.log(val);
+    return calculateSquare(2);
+})
+    .then(val => {
+
+        console.log(val);
+        return calculateSquare(3);
+    })
+    .then(val => {
+
+        console.log(val);
+    })
+    .catch(err => {
+
+        console.log(err);
+    })
