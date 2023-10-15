@@ -3,7 +3,7 @@ function askFirstDealer() {
     return new Promise((resolve, reject) => {
 
         setTimeout(() => {
-            reject("Not suitable car");
+            resolve(8000);
         }, 3000);
     })
 }
@@ -28,11 +28,7 @@ function askThirdDealer() {
     })
 }
 
-Promise.all([askFirstDealer().catch(err => err), askSecondDealer(), askThirdDealer()]).then(value => {
-
-    console.log(value);
-})
-    .catch(err => {
-
-        console.log(err);
-    })
+Promise.allSettled([askFirstDealer(), askSecondDealer(), askThirdDealer()])
+.then(values=>{
+    console.log(values);
+});
