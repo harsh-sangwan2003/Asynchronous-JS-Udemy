@@ -3,7 +3,7 @@ function askFirstDealer() {
     return new Promise((resolve, reject) => {
 
         setTimeout(() => {
-            resolve(8000);
+            reject(8000);
         }, 3000);
     })
 }
